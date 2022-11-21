@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="manning.css" rel="stylesheet">
+    <link rel="icon" href="images/ab_icon.ico" />
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body onload="plotMe()">
+    <div class="topnav" margin-left="260px" padding="0px 10px">
+        <a margin-left="260px" href=""><b>Hazen-Williams Equation - Head Loss in Water Pipes</b></a>
+        <a
+            onclick="alert('Partialy full pipe flow claculator using Manning equation.\nFor anything more, contact me:\nAmihay Blau\nmail: amihay@blau-eng.co.il\nPhone: +972-54-6668902');">by
+            A. Blau Engineering</a>
+    </div>
+
+    <div class="sidenav" id="sidenav">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" id="pipe1" name="pipe1" onclick="plotMe()" checked>
+                <label for="pipe1">1st Pipe</label>
+            </span>
+            <div class="break"></div>
+            <label for="txt_Q1">Q [m<sup>3</sup>/hr]:</label>
+            <input type="text" id="txt_Q1" class="txt_input" value="100" onchange="plotMe()">
+            <div class="break"></div>
+            <label for="txt_D1">D [mm]:</label>
+            <input type="text" id="txt_D1" class="txt_input" value="150" onchange="plotMe()">
+            <div class="break"></div>
+            <label for="txt_C1">C:</label>
+            <input type="text" id="txt_C1" class="txt_input" value="120" onchange="plotMe()">
+            <div class="break"></div>
+            <label for="txt_L1">L [km]:</label>
+            <input type="text" id="txt_L1" class="txt_input" value="1" onchange="plotMe()">
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" id="pipe2" name="pipe2" onclick="plotMe()">
+                <label for="pipe2">2nd Pipe</label>
+            </span>
+            <div class="break"></div>
+            <label for="txt_Q2">Q [m<sup>3</sup>/hr]:</label>
+            <input type="text" id="txt_Q2" class="txt_input" value="100" onchange="plotMe()">
+            <div class="break"></div>
+            <label for="txt_D2">D [mm]:</label>
+            <input type="text" id="txt_D2" class="txt_input" value="200" onchange="plotMe()">
+            <div class="break"></div>
+            <label for="txt_C2">C:</label>
+            <input type="text" id="txt_C2" class="txt_input" value="120" onchange="plotMe()">
+            <div class="break"></div>
+            <label for="txt_L2">L [km]:</label>
+            <input type="text" id="txt_L2" class="txt_input" value="1" onchange="plotMe()">
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" id="pipe3" name="pipe3" onclick="plotMe()">
+                <label for="pipe3">3rd Pipe</label>
+            </span>
+            <div class="break"></div>
+            <label for="txt_Q3">Q [m<sup>3</sup>/hr]:</label>
+            <input type="text" id="txt_Q3" class="txt_input" value="100" onchange="plotMe()">
+            <div class="break"></div>
+            <label for="txt_D3">D [mm]:</label>
+            <input type="text" id="txt_D3" class="txt_input" value="250" onchange="plotMe()">
+            <div class="break"></div>
+            <label for="txt_C3">C:</label>
+            <input type="text" id="txt_C3" class="txt_input" value="120" onchange="plotMe()">
+            <div class="break"></div>
+            <label for="txt_L3">L [km]:</label>
+            <input type="text" id="txt_L3" class="txt_input" value="1" onchange="plotMe()">        
+        </div>
+        
+    </div>
+    <div class="plot" id='pipes_table'>
+        <!-- Plotly chart will be drawn inside this DIV -->
+    </div>
+    <div class="plot" id="plot">
+    </div>
+
+    <script src="PressurePipes.js"></script>
+</body>
+
+</html>
